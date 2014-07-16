@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-# NGINX
+# nginx
 describe service('nginx') do
   it { should be_enabled   }
   it { should be_running   }

@@ -11,7 +11,7 @@ group node['nginx']['group']
 node.normal['nginx']['user'] = 'nginx'
 user node['nginx']['user'] do
   supports :manage_home => true
-  group node['tomcat']['group']
+  group node['nginx']['group']
   system true
   home '/home/nginx'
   shell '/bin/bash'
