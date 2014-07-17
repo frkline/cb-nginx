@@ -18,7 +18,14 @@ user node['nginx']['user'] do
   comment 'NGINX user'
 end
 
+# Upgrade OpenSSL
+yum_package 'openssl' do
+  action :upgrade
+end
+
 # Configure nginx
 # https://supermarket.getchef.com/cookbooks/nginx
-node.normal['nginx']['init_style'] = 'init'
-include_recipe 'nginx::source'
+node.normal['nginx']['repo_source'] = 'nginx'
+node.normal['nginx']['default_site_enabled'] = false
+node.normal['nginx']['sendfile'] = 'off'
+include_recipe 'nginx'
