@@ -27,5 +27,5 @@ end
 # https://supermarket.getchef.com/cookbooks/nginx
 node.normal['nginx']['repo_source'] = 'nginx'
 node.normal['nginx']['default_site_enabled'] = false
-node.normal['nginx']['sendfile'] = 'off'
+node.normal['nginx']['sendfile'] = 'on'
 include_recipe 'nginx'
